@@ -21,10 +21,10 @@ author: Phuong Le
 
 navbar-links:
   About Me: "aboutme"
-  My Resume:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  My Website:
+    - Project: "https://tooc.space/"
+    - Blog: "https://write.as/phuong/"
+  Resume: ""
 
 ################
 # --- Logo --- #
