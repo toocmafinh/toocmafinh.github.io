@@ -1,4 +1,4 @@
-#Hello world
+# Hello world
 
 <div style="text-align:center;width:100%;">
 <img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
@@ -12,9 +12,13 @@ I write because I'm afraid someday I might forget everything or I might be forgo
 **Let's call this the navigation xD**</span>
 
 [😎 travel](https://write.as/phuong/tag:travel) 
+
 [🤓 learn](https://write.as/phuong/tag:learn) 
-[😍 love](https://write.as/phuong/tag:love)<!--more-->
+
+[😍 love](https://write.as/phuong/tag:love)
+
 [🤔 opinion (provocative content warning)](https://write.as/phuong/tag:opinion)
+
 [🗂 archive](https://write.as/phuong/tag:archive)
 
 ---
