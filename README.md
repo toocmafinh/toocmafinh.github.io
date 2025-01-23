@@ -1,8 +1,11 @@
-# Hello world
+---
+layout: home
+title: "Welcome to My Blog"
+---
+
 
 <div style="text-align:center;width:100%;">
 <img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
-
 <div style="text-align:justify;width:100%;">
 Hey!
 I'm Phuong :D
