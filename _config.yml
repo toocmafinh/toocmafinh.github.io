@@ -6,3 +6,16 @@ layout: post
 title: "POST-TITLE"
 date: YYYY-MM-DD hh:mm:ss -0000
 categories: CATEGORY-1 CATEGORY-2
+
+
+layout: home
+title: "Welcome to My Blog"
+
+
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
