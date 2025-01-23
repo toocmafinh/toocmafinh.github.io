@@ -1,8 +1,4 @@
----
-layout: home
-title: "Welcome to My Blog"
----
-
+# Hello world
 
 <div style="text-align:center;width:100%;">
 <img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
