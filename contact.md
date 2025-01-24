@@ -1,5 +1,5 @@
 ---
 layout: page
-title: "About"
+title: "Contact"
 ---
 This is the about page content.

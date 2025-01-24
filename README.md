@@ -1,118 +1,41 @@
-# Hyde
+# Hello world
 
-Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+<div style="text-align:center;width:100%;">
+<img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
+<div style="text-align:justify;width:100%;">
+Hey!
+I'm Phuong :D
+I write because I'm afraid someday I might forget everything or I might be forgotten.
 
-![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
+<span style="color:#F88379">
+**Let's call this the navigation xD**</span>
 
+[😎 travel](https://write.as/phuong/tag:travel) 
+[🤓 learn](https://write.as/phuong/tag:learn) 
+[😍 love](https://write.as/phuong/tag:love)
+[🤔 opinion (provocative content warning)](https://write.as/phuong/tag:opinion)
+[🗂 archive](https://write.as/phuong/tag:archive)
 
-## Contents
-
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
-
-
-## Usage
-
-Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
-
-
-## Options
-
-Hyde includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Sidebar menu
-
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
-
-```
 ---
-layout: page
-title: About
+People call me by my name, or To.oc or Béo, or 秋芳, or just 芳.
+
+My most recent favorite series is Someday or one day -「想見你」.
+
+My favorite quote from this series is "唯有你也想見我的時候，我們見面才有意義。"
+
 ---
-```
+I was born and raised in a sweet family and have been much influenced by my sister. 
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+I love reading, writing, sleeping, traveling, doodling, learning languages, collecting little stuff, painting my nails, creating some crazy things, and watching Chinese/Taiwanese movies with my sister.
 
+I'm kinda weird. Sometimes I wonder if I can keep buying cute things and talking about politics and religions at the same time, even when I'm a grown-up.
 
-### Sticky sidebar content
+My dream never stops at a stable life and I have always desired to do something that helps this planet become a nice place to live.
 
-By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
+I have been always appreciating what I have, but I will continue realizing the goals I set.
 
-```html
-<!-- Default sidebar -->
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    ...
-  </div>
-</div>
+---
+I started writing when I was in 5th grade, not as a hobby, but as a self-assignment. Writing's naturally become my habit when I need to secretly express myself. I've been switching a lot between different platforms, due to several reasons. I hope that I can finally settle down here so that I can truly feel like it's the home of my mind.
 
-<!-- Modified sidebar -->
-<div class="sidebar">
-  <div class="container">
-    ...
-  </div>
-</div>
-```
-
-
-### Themes
-
-Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
-
-![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
-
-There are eight themes available at this time.
-
-![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
-```
-
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/public/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
-
-### Reverse layout
-
-![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
-
-Hyde's page orientation can be reversed with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
-```
-
-
-## Development
-
-Hyde has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
-
-## License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+---
+[中文](https://write.as/qiu-fang) 
