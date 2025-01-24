@@ -284,3 +284,13 @@ footer {
     color:#444;
   }
 }
+
+.post-feed {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0;           /* Removes default padding */
+}
+
+.post-feed li {
+  margin-bottom: 20px;  /* Adds space between items */
+}
+
