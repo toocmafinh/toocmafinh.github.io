@@ -1,9 +1,12 @@
 ---
-layout: post
-title: Introducing Hyde
-author: Phuong
-tags: test
+title: "Online Courses Reviews"
+date: 2018-01-16
+categories:
+  - blog
+tags:
+  - online courses
 ---
+
 
 Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
