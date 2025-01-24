@@ -1,67 +1,120 @@
-###########
-# site.title
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-title: jekyllBear
-description: a minimal, text focused blog theme
-# baseurl: "/jekyllBear" # the subpath of your site, e.g. /blog/
-url: "https://knhash.in/jekyllBear" # the base hostname & protocol for your site
-# host: 0.0.0.0
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: DongDataDive
+email:
+description: Data Science & Analytics, Data Storyteller
+twitter_username: username
+github_username: yudong-94
+minimal_mistakes_skin: default
+search: true
+excerpt_separator: "<!--more-->"
 
-
-#########################
-# more settings
-
-plugins:
-  - jekyll-redirect-from
-
-whitelist:
-  - jekyll-redirect-from
-
+# Build settings
 markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-compress_html:
-  clippings: all
-  comments: [""]
-  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
-  profile: false
-  blanklines: false
-  ignore:
-    envs: []
+include:
+  - _pages
 
-# sass:
-#   sass_dir: css
-#   style:    compressed
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
 
-collections:
-  my_tags:
-    output: true
-    permalink: /tagged/:slug/
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# Analytics
+analytics:
+  provider               : "google-gtag"
+  google:
+    tracking_id          : "G-HYNJ6LL1M6"
+    anonymize_ip         : false
+
+author:
+  name   : "Yu Dong"
+  avatar : "/assets/images/bio_picture_cat.png"
+  bio    : "Data Science & Analytics, Data Storyteller"
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/yudong1994/"
+    - label: "Medium"
+      url: "https://medium.com/@ydong029"
+    - label: "GitHub"
+      url: "https://github.com/yudong-94"
+    - label: "Tableau Public"
+      url: "https://public.tableau.com/app/profile/yu.dong#!/"
+    - label: "✅ My Weekly Vizzes"
+      url: "https://yudong-94.github.io/personal-website/categories/#data-viz"
+    - label: "✅ My Bi-Monthly Reading Notes"
+      url: "https://yudong-94.github.io/personal-website/categories/#reading-notes"
+    - label: "✅ My Blog Posts"
+      url: "https://yudong-94.github.io/personal-website/categories/#blog"
+
+footer:
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/yudong1994/"
+    - label: "GitHub"
+      url: "https://github.com/yudong-94"
+
 defaults:
-  -
-    scope:
+  # _posts
+  - scope:
       path: ""
-      type: my_tags
+      type: posts
     values:
-      layout: tagged
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      seo: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      seo: true
 
-# baseurl: ""
-permalink: /blog/:slug
-timezone: America/New_York
-future: false
-
-exclude:
-- README.md
-- LICENSE.md
-
-exclude: [vendor]
-
-Blog: /blog
-
-# Add general links to site pages here
-links:
-  Resume: /assets/resume.pdf
-  
-
-# Add links for more focus here
-special_links:
-  "Search": https://duckduckgo.com
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

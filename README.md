@@ -1,105 +1,42 @@
-# jekyllBear
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HYNJ6LL1M6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-## An easy to use, minimal, text focused Jekyll theme
+  gtag('config', 'G-HYNJ6LL1M6');
+</script>
+</head>
 
-[Bear Blog](https://bearblog.dev/) is *"a blogging platform where words matter most"*. 
+## Home Page
 
-This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub Pages to host your blog while getting the same awesome Bear Blog feels.
+### About Me
 
-**Stop worrying about the style, focus on your writing.**
+Hi there! I am Yu Dong. I am a detail-oriented data scientist and storyteller. I graduated from MS Business Analytics program from USC Marshall School of Business in Dec 2017. After graduation, I worked as a product analyst at Ancestry.com for three years, using analytics to understand user behavior, improve product engagement, and enable data-driven business decision-making. Then I joined Brex as a Data Scientist in late 2020, exploring more analytics and data science application in the fintech industry. I am passionate about interepreting data under business context and data-driven business decision-making.
 
-- Looks great on *any* device
-- Tiny, optimized, and awesome pages, with [a 100 on PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Fknhash.in%2FjekyllBear%2F)
-- No trackers, ads, or scripts, *did I mention minimal already?*
-- Auto light and dark themes
-- Tag support, to filter blog pages
-- Quick, *15 minute* setup
-- Gallery view for your images
-- Code highlighting
+I'm also a lifelong learner with deep curiosity. I have completed [more than 30 online courses](https://yudong-94.github.io/personal-website/blogs/MOOCList) on Coursera, edX and other MOOC platforms in subjects ranging from Statistics to Machine Learning.
 
-## Screenshots
+Outside work, I make one data visualization on Tableau Public every week since 2018. You can find my collections [here](https://yudong-94.github.io/personal-website/project/ProjectList/).   
 
-![Home](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBHome.png?raw=true "Home") 
-![Blog](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBBlog.png?raw=true "Blog") 
-![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBLongForm.png?raw=true "LongForm") 
-![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBPoetry.png?raw=true "Poetry") 
+My analytical skillset includes:
+- Data mining: R, Python, Spark (in Scala and PySpark), Excel
+- Visualization: Tableau, R Shiny
+- Databases: MySQL, Amazon Redshift, Snowflake
+- A/B Testing and Causal Inference
+- Machine learning models
 
+### About This Site
 
-## Installation
+This site works as a gallery of my data projects as well as my own thoughts on data analysis. You will find:  
+1. [My Weekly Tableau Visualizations](https://yudong-94.github.io/personal-website/categories/#data-viz) since 2018 at the **data viz** category  
+2. [Bi-monthly Reading Notes](https://yudong-94.github.io/personal-website/categories/#reading-notes) since 2020 at the **reading notes** category  
+3. [Blogs](https://yudong-94.github.io/personal-website/categories/#blog) on my own thoughts and experience in the data science fields at the **blog** tag  
 
-Add this line to your Jekyll site's `Gemfile`:
+### Contact Me    
 
-```ruby
-gem "jekyll-bear-theme"
-```
-
-And add this line to your Jekyll site's `_config.yml`:
-
-```yaml
-theme: jekyll-bear-theme
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install jekyll-bear-theme
-
-## Usage
-
-Create a new repository for your website (if necessary)
-```jekyll
-jekyll new my_website
-```
-
-Copy over the following content from this repository, to serve as a base setup
-
-```
-/posts      -> Where you will write your posts
-/_my_tags   -> Where you will define your tags, if you need to add anything new
-blog.md     -> Homepage for your blog
-index.md    -> Website homepage
-404.html    -> When a page is not available
-```
-
-You will need to update `_config.yml`. Copy over the lines after
-
-```
-#########################
-# more settings
-```
-in the `_config.yml` present in this repository to your website repository `_config.yml`.
-
-Any new links you want to add to the navbar goes here, towards the end.
-This also defines the bits about tags and filtering.
-
-There should be 3 kinds of blog posts in the posts folder, an example of each type you can use:
-
-- long-form reading
-- poetry
-- gallery view
-
-Use them as templates for your front matter.
-
->To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
-
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/knhash/jekyllBear. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `jekyllBear.gemspec` accordingly.
-
-## License
-
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
+[My LinkedIn](https://www.linkedin.com/in/yudong1994/)  
+[My Github](https://github.com/yudong-94)  
+[My Medium Profile](https://medium.com/@ydong029)  
+E-mail: yu.dong.0029@gmail.com
