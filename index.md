@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<ul>
+<ul class="post-feed">
 {% assign excerpt_length = site.excerpt_length | default: 50 %}
 {% for post in site.posts limit: 20 %}
   <li>
