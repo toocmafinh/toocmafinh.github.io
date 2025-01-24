@@ -154,3 +154,11 @@ I started writing when I was in 5th grade, not as a hobby, but as a self-assignm
 ---
 [中文](https://write.as/qiu-fang) 
 
+<ul>
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
+  </li>
+{% endfor %}
+</ul>
+
