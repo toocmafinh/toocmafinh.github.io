@@ -4,7 +4,7 @@ title: Las Vegas Hotels - TripAvisor Review
 author: Phuong Le
 ---
 
-*Excited to share my latest project for the #Data_Visualisation challenge, focusing on the vibrant world of Las Vegas hotels! Here’s a breakdown of the process I followed to create an interactive dashboard using #TableauDesktop.*
+*Excited to share my latest project for the Data Visualisation challenge, focusing on the vibrant world of Las Vegas hotels! Here’s a breakdown of the process I followed to create an interactive dashboard using Tableau Desktop.*
 
 ## Reviewing the Las Vegas Dataset
 The journey began with a thorough review of the Las Vegas dataset. This dataset provides valuable insights into various hotels, including their locations, review scores, capacity, and more. Understanding the data was crucial for creating a meaningful visualisation.
@@ -31,7 +31,7 @@ I opted for several visualisation methods:
 These choices enhance clarity and allow users to quickly grasp key insights.
 
 ## Developing the Interactive Dashboard
-Using #TableauDesktop, I created an interactive dashboard named Las Vegas Hotels. This dashboard allows users to filter by review scores, explore hotel locations on a map, and view detailed statistics at a glance.
+Using TableauDesktop, I created an interactive dashboard named Las Vegas Hotels. This dashboard allows users to filter by review scores, explore hotel locations on a map, and view detailed statistics at a glance.
 
 - Key Components of the Dashboard
 - User Location Map: Shows hotel distribution across different regions.
