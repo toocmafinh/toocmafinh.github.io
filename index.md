@@ -154,10 +154,28 @@ I started writing when I was in 5th grade, not as a hobby, but as a self-assignm
 ---
 [中文](https://write.as/qiu-fang) 
 
+## {{ site.subtitle }}
+
+### Latest Posts
+
 <ul>
-{% for post in site.posts %}
+{% assign excerpt_length = site.excerpt_length | default: 50 %}
+{% for post in site.posts limit: 20 %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
+    <h3>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <p>
+      {% if post.subtitle %}
+        <strong>{{ post.subtitle }}</strong> - 
+      {% endif %}
+      {{ post.content | strip_html | truncatewords: excerpt_length }}
+    </p>
+    <p>
+      <small>
+        Published on {{ post.date | date: "%A, %d %B %Y" }}
+      </small>
+    </p>
   </li>
 {% endfor %}
 </ul>
