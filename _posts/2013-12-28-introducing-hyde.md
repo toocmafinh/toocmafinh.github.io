@@ -1,39 +1,43 @@
 ---
 layout: post
-title: Introducing Hyde
-author: Phuong
-tags: test
+title: Las Vegas Hotels - TripAvisor Review 
+author: Phuong Le
 ---
 
-Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+# Las Vegas Hotel Dashboard: A Data Visualisation Journey
 
-### Built on Poole
+*Excited to share my latest project for the #Data_Visualisation challenge, focusing on the vibrant world of Las Vegas hotels! 🌟 Here’s a breakdown of the process I followed to create an interactive dashboard using #TableauDesktop.*
 
-Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by [@mdo](https://twitter.com/mdo). Poole, and every theme built on it (like Hyde here) includes the following:
+## Reviewing the Las Vegas Dataset
+The journey began with a thorough review of the Las Vegas dataset. This dataset provides valuable insights into various hotels, including their locations, review scores, capacity, and more. Understanding the data was crucial for creating a meaningful visualisation.
 
-* Complete Jekyll setup included (layouts, config, [404](/404), [RSS feed](/atom.xml), posts, and [example page](/about))
-* Mobile friendly design and development
-* Easily scalable text and component sizing with `rem` units in the CSS
-* Support for a wide gamut of HTML elements
-* Related posts (time-based, because Jekyll) below each post
-* Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)
+## Defining the Business/User Persona
+For this project, I identified a business user persona: hotel managers in Las Vegas looking to improve their services and attract more guests. By focusing on their needs, I crafted a narrative that emphasizes the importance of customer reviews and hotel capacity in driving business decisions.
 
-### Hyde features
+## Identifying Key Data Elements
+Key data elements included:
 
-In addition to the features of Poole, Hyde adds the following:
+- Location: Understanding where hotels are situated.
+- Review Scores: Analyzing customer feedback to gauge hotel performance.
+- Hotel Capacity: Evaluating how many guests each hotel can accommodate.
 
-* Sidebar includes support for textual modules and a dynamically generated navigation with active link support
-* Two orientations for content and sidebar, default (left sidebar) and [reverse](https://github.com/poole/lanyon#reverse-layout) (right sidebar), available via `<body>` classes
-* [Eight optional color schemes](https://github.com/poole/hyde#themes), available via `<body>` classes
+These elements were pivotal in guiding the visualisation choices.
 
-[Head to the readme](https://github.com/poole/hyde#readme) to learn more.
+## Choosing Visualisations
+I opted for several visualisation methods:
 
-### Browser support
+- Maps: To illustrate hotel locations and their geographical distribution.
+- Bar Charts: For comparing review scores across different hotels.
+- Tables: To provide detailed information on hotel capacity and average room numbers.
 
-Hyde is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.
+These choices enhance clarity and allow users to quickly grasp key insights.
 
-### Download
+## Developing the Interactive Dashboard
+Using #TableauDesktop, I created an interactive dashboard named Las Vegas Hotels. This dashboard allows users to filter by review scores, explore hotel locations on a map, and view detailed statistics at a glance.
 
-Hyde is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/hyde">GitHub repository</a> for downloads, bug reports, and features requests.
+- Key Components of the Dashboard
+- User Location Map: Shows hotel distribution across different regions.
+- Review Score Overview: Highlights average scores and trends over time.
+- Hotel Capacity Metrics: Provides insights into the number of rooms and overall hotel capacity.
 
-Thanks!
+This dashboard is designed to empower hotel managers with the insights they need to make informed decisions and enhance their offerings.
