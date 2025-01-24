@@ -122,15 +122,12 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 The final element.
 ```
 
-<div style="text-align:center;width:100%;">
-<img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
 
-<div style="text-align:justify;width:100%;">
 Hey!
 I'm Phuong :D
 I write because I'm afraid someday I might forget everything or I might be forgotten.
 
-*** Let's call this the navigation xD
+**Let's call this the navigation xD**
 
 [learn](https://write.as/phuong/tag:learn) 
 [love](https://write.as/phuong/tag:love)
