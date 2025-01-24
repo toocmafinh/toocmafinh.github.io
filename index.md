@@ -130,8 +130,7 @@ Hey!
 I'm Phuong :D
 I write because I'm afraid someday I might forget everything or I might be forgotten.
 
-<span style="color:#F88379">
-**Let's call this the navigation xD**</span>
+*** Let's call this the navigation xD
 
 [😎 travel](https://write.as/phuong/tag:travel) 
 [🤓 learn](https://write.as/phuong/tag:learn) 
