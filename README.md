@@ -1,41 +1,105 @@
-# Hello world
+# jekyllBear
 
-<div style="text-align:center;width:100%;">
-<img src="https://i.imgur.com/zXkIhQe.jpg" width="200" style="border-radius:50%"></div>
-<div style="text-align:justify;width:100%;">
-Hey!
-I'm Phuong :D
-I write because I'm afraid someday I might forget everything or I might be forgotten.
+## An easy to use, minimal, text focused Jekyll theme
 
-<span style="color:#F88379">
-**Let's call this the navigation xD**</span>
+[Bear Blog](https://bearblog.dev/) is *"a blogging platform where words matter most"*. 
 
-[😎 travel](https://write.as/phuong/tag:travel) 
-[🤓 learn](https://write.as/phuong/tag:learn) 
-[😍 love](https://write.as/phuong/tag:love)
-[🤔 opinion (provocative content warning)](https://write.as/phuong/tag:opinion)
-[🗂 archive](https://write.as/phuong/tag:archive)
+This is a port of it's theme to Jekyll, with some tweaks. So you can use GitHub Pages to host your blog while getting the same awesome Bear Blog feels.
 
----
-People call me by my name, or To.oc or Béo, or 秋芳, or just 芳.
+**Stop worrying about the style, focus on your writing.**
 
-My most recent favorite series is Someday or one day -「想見你」.
+- Looks great on *any* device
+- Tiny, optimized, and awesome pages, with [a 100 on PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Fknhash.in%2FjekyllBear%2F)
+- No trackers, ads, or scripts, *did I mention minimal already?*
+- Auto light and dark themes
+- Tag support, to filter blog pages
+- Quick, *15 minute* setup
+- Gallery view for your images
+- Code highlighting
 
-My favorite quote from this series is "唯有你也想見我的時候，我們見面才有意義。"
+## Screenshots
 
----
-I was born and raised in a sweet family and have been much influenced by my sister. 
+![Home](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBHome.png?raw=true "Home") 
+![Blog](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBBlog.png?raw=true "Blog") 
+![LongForm](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBLongForm.png?raw=true "LongForm") 
+![Poetry](https://raw.githubusercontent.com/Knhash/jekyllBear/master/assets/images/JBPoetry.png?raw=true "Poetry") 
 
-I love reading, writing, sleeping, traveling, doodling, learning languages, collecting little stuff, painting my nails, creating some crazy things, and watching Chinese/Taiwanese movies with my sister.
 
-I'm kinda weird. Sometimes I wonder if I can keep buying cute things and talking about politics and religions at the same time, even when I'm a grown-up.
+## Installation
 
-My dream never stops at a stable life and I have always desired to do something that helps this planet become a nice place to live.
+Add this line to your Jekyll site's `Gemfile`:
 
-I have been always appreciating what I have, but I will continue realizing the goals I set.
+```ruby
+gem "jekyll-bear-theme"
+```
 
----
-I started writing when I was in 5th grade, not as a hobby, but as a self-assignment. Writing's naturally become my habit when I need to secretly express myself. I've been switching a lot between different platforms, due to several reasons. I hope that I can finally settle down here so that I can truly feel like it's the home of my mind.
+And add this line to your Jekyll site's `_config.yml`:
 
----
-[中文](https://write.as/qiu-fang) 
+```yaml
+theme: jekyll-bear-theme
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install jekyll-bear-theme
+
+## Usage
+
+Create a new repository for your website (if necessary)
+```jekyll
+jekyll new my_website
+```
+
+Copy over the following content from this repository, to serve as a base setup
+
+```
+/posts      -> Where you will write your posts
+/_my_tags   -> Where you will define your tags, if you need to add anything new
+blog.md     -> Homepage for your blog
+index.md    -> Website homepage
+404.html    -> When a page is not available
+```
+
+You will need to update `_config.yml`. Copy over the lines after
+
+```
+#########################
+# more settings
+```
+in the `_config.yml` present in this repository to your website repository `_config.yml`.
+
+Any new links you want to add to the navbar goes here, towards the end.
+This also defines the bits about tags and filtering.
+
+There should be 3 kinds of blog posts in the posts folder, an example of each type you can use:
+
+- long-form reading
+- poetry
+- gallery view
+
+Use them as templates for your front matter.
+
+>To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`.
+
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/knhash/jekyllBear. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `jekyllBear.gemspec` accordingly.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
