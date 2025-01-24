@@ -5,19 +5,26 @@ layout: default
 # Resume
 
 **Mobile:** 0476 028 933  
+
 **Email:** [phgle@outlook.com](mailto:phgle@outlook.com)  
+
 **LinkedIn:** [linkedin.com/in/phgle](https://www.linkedin.com/in/phgle/)
 
 ## Key Skills
 
-**Technical Skills:** Data Processing, Modelling, Text Mining, Quantitative Analysis, Data Visualisation  
+**Technical Skills:** Data Processing, Modelling, Text Mining, Quantitative Analysis, Data Visualisation 
+
 **Languages/Tools:** Python, R, SQL, MS Excel, Power BI, Tableau, Alteryx, SAS, Google Analytics
+
 
 ## Education
 
 ### Deakin University (2022 – 2024)
+
 **Master of Business Analytics - Specialisation in Marketing Technology**  
+
 **Capstone Project:** Marketing Journey Optimisation from Customer Insights for World Vision Australia
+
 - Led a team of five to develop a comprehensive solution for enhancing customer retention in subscription-based hybrid marketing campaigns.
 - Utilized Python for data preparation and predictive analytics to enable effective customer segmentation based on behaviours, preferences, and lifetime value.
 - Created dynamic visualizations in Power BI to present insights, facilitating data-driven decision-making and anticipating a significant reduction in churn rates.
