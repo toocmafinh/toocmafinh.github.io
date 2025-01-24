@@ -9,13 +9,14 @@ layout: default
 **Email:** [phgle@outlook.com](mailto:phgle@outlook.com)  
 
 **LinkedIn:** [linkedin.com/in/phgle](https://www.linkedin.com/in/phgle/)
+---
 
 ## Key Skills
 
 **Technical Skills:** Data Processing, Modelling, Text Mining, Quantitative Analysis, Data Visualisation 
 
 **Languages/Tools:** Python, R, SQL, MS Excel, Power BI, Tableau, Alteryx, SAS, Google Analytics
-
+---
 
 ## Education
 
