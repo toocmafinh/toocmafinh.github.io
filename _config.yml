@@ -1,21 +1,26 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
 
-layout: post
-title: "POST-TITLE"
-date: YYYY-MM-DD hh:mm:ss -0000
-categories: CATEGORY-1 CATEGORY-2
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
 
+# Setup
+title:            Hyde
+tagline:          'A Jekyll theme'
+description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:              http://hyde.getpoole.com
+baseurl:          /
 
-layout: home
-title: "Welcome to My Blog"
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
 
+paginate:         5
 
-nav:
-  - title: Home
-    url: /
-  - title: About
-    url: /about
-  - title: Contact
-    url: /contact
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/poole/hyde
