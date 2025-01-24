@@ -3,15 +3,7 @@
 
 @import "jekyll-theme-minimal";
 
-.post-feed {
-    list-style-type: none; /* Removes bullet points */
-    padding: 0;           /* Removes default padding */
-}
-
-.post-feed li {
-    margin-bottom: 20px;  /* Adds space between items */
-}
-
-.post-feed a {
-    color: #333;          /* Changes link color */
+ul {
+    list-style-type: none; /* Adds bullet points */
+    padding-left: 20px;    /* Indents the list */
 }
