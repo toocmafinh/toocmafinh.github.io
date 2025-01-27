@@ -6,9 +6,9 @@ layout: default
 {% assign excerpt_length = site.excerpt_length | default: 50 %}
 {% for post in site.posts limit: 20 %}
   <li>
-    <h2>
+    <h1>
       <a href="{{ post.url }}">{{ post.title }}</a>
-    </h2>
+    </h1>
     <p>
       {% if post.subtitle %}
         <strong>{{ post.subtitle }}</strong> - 
