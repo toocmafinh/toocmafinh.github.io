@@ -4,11 +4,11 @@ layout: default
 
 # Resume
 
-**Mobile:** 0476 028 933  
+**Mobile:**   
 
-**Email:** [phgle@outlook.com](mailto:phgle@outlook.com)  
+**Email:**   
 
-**LinkedIn:** [linkedin.com/in/phuong-rachel-le](https://www.linkedin.com/in/phuong-rachel-le/)
+**LinkedIn:** 
 
 
 ## Key Skills
