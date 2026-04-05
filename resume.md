@@ -8,7 +8,7 @@ layout: default
 
 **Email:** [phgle@outlook.com](mailto:phgle@outlook.com)  
 
-**LinkedIn:** [linkedin.com/in/phgle](https://www.linkedin.com/in/phuong-rachel-le/)
+**LinkedIn:** [linkedin.com/in/phuong-rachel-le](https://www.linkedin.com/in/phuong-rachel-le/)
 
 
 ## Key Skills
