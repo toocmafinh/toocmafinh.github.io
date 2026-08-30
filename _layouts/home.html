@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-AU" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/home.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="main-content">
+      {{ content }}
+    </div>
+    <footer>
+      <span>© {{ "now" | date: "%Y" }} Phuong Le</span>
+      <a href="{{ "/about.html" | relative_url }}">About</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+---
+---
+
+/*
+  Homepage styles only.
+  Change the node positions near the bottom of this file.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  padding: 8px 12px;
+  background: #111;
+  color: #fff;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.page-intro {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #111;
+  font-size: 14px;
+}
+
+.page-intro p {
+  margin: 0;
+  color: #555;
+}
+
+.name-link {
+  font-weight: bold;
+}
+
+.orbit-stage {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  height: 850px;
+  margin: 20px auto 0;
+}
+
+.orbit {
+  position: absolute;
+  border: 2px dashed #111;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-inner {
+  top: 31%;
+  left: 10%;
+  width: 45%;
+  height: 48%;
+}
+
+.orbit-middle {
+  top: 14%;
+  left: -2%;
+  width: 76%;
+  height: 75%;
+}
+
+.orbit-outer {
+  top: -5%;
+  left: -18%;
+  width: 116%;
+  height: 108%;
+}
+
+.sun {
+  position: absolute;
+  top: 43%;
+  left: 23%;
+  display: grid;
+  place-content: center;
+  width: 165px;
+  height: 165px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.sun strong {
+  font-size: 32px;
+}
+
+.node {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  width: 130px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.node-circle {
+  display: block;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 9px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.node-stripes .node-circle {
+  background-image: repeating-linear-gradient(4deg, #fff 0 8px, #111 9px 11px);
+}
+
+.node-rings .node-circle {
+  background-image: repeating-radial-gradient(circle, #fff 0 8px, #111 9px 11px);
+}
+
+.node-dots .node-circle {
+  background-image: radial-gradient(#111 2px, transparent 2px);
+  background-size: 13px 13px;
+}
+
+.node strong {
+  font-size: 15px;
+}
+
+.node small {
+  margin-top: 4px;
+  color: #555;
+  font-size: 11px;
+}
+
+.outer-node .node-circle {
+  width: 72px;
+  height: 72px;
+}
+
+/* Closest orbit */
+.node-honeyguide { top: 24%; left: 23%; }
+.node-resume { top: 39%; left: 49%; }
+.node-github { top: 67%; left: 18%; }
+.node-projects { top: 65%; left: 48%; }
+
+/* Middle orbit */
+.node-chinese { top: 28%; left: 70%; }
+.node-academic { top: 67%; left: 70%; }
+
+/* Outer links */
+.button-blog { top: 5%; left: 69%; }
+.button-thread { top: 45%; left: 91%; }
+.button-instagram { top: 83%; left: 84%; }
+.button-imdb { top: 92%; left: 51%; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #111;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+    overflow-x: hidden;
+  }
+
+  .page-intro {
+    grid-template-columns: 1fr auto;
+  }
+
+  .page-intro p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .orbit-stage {
+    width: 680px;
+    height: 700px;
+    margin-left: calc((100vw - 680px) / 2);
+    transform: scale(.86);
+  }
+
+  .sun {
+    width: 140px;
+    height: 140px;
+  }
+
+  .node {
+    width: 112px;
+  }
+
+  .node-circle {
+    width: 68px;
+    height: 68px;
+  }
+}
