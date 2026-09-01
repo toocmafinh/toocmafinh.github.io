@@ -4,16 +4,17 @@ title: Tooc’s Space
 description: Phuong Le’s personal space for projects, writing and interests.
 
 # EDIT YOUR LINKS HERE
-honeyguide_url: "#links-to-edit"
 resume_url: "/resume.html"
 github_url: "https://github.com/toocmafinh"
 projects_url: "/2023/12/28/las-vegas-hotels.html"
 chinese_url: "#links-to-edit"
 academic_url: "#links-to-edit"
-blog_url: "/2023/12/28/airbnb-review.html"
-thread_url: "#links-to-edit"
-instagram_url: "#links-to-edit"
-imdb_url: "#links-to-edit"
+travel_url: "/2023/12/28/las-vegas-hotels.html"
+blog_url: "https://write.as/phuong"
+thread_url: "https://www.threads.com/@tooc.space"
+instagram_url: "https://instagram.com/tooc.space"
+imdb_url: "https://www.imdb.com/list/ls031781578"
+coffee_url: "https://buymeacoffee.com/tooc"
 ---
 
 <header class="page-intro">
@@ -22,69 +23,28 @@ imdb_url: "#links-to-edit"
   <a href="{{ "/about.html" | relative_url }}">About</a>
 </header>
 
-<main id="links-to-edit" class="orbit-stage" aria-label="Tooc’s portfolio space">
-  <div class="orbit orbit-inner" aria-hidden="true"></div>
-  <div class="orbit orbit-middle" aria-hidden="true"></div>
-  <div class="orbit orbit-outer" aria-hidden="true"></div>
+<main id="links-to-edit" class="space-map" aria-label="Tooc’s portfolio space">
+  <h1 class="space-hub">
+    <a href="{{ "/about.html" | relative_url }}" aria-label="About Phuong Le">tooc’s <strong>space</strong></a>
+  </h1>
 
-  <div class="sun">
-    <span>tooc’s</span>
-    <strong>space</strong>
-  </div>
+  <nav class="link-group work-group" aria-label="Work and profile links">
+    <a class="space-link link-resume" href="{{ page.resume_url | relative_url }}">Résumé</a>
+    <a class="space-link link-projects" href="{{ page.projects_url | relative_url }}">Projects</a>
+    <a class="space-link link-github" href="{{ page.github_url }}">GitHub</a>
+  </nav>
 
-  <!-- Closest orbit -->
-  <a class="node node-honeyguide node-stripes" href="{{ page.honeyguide_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Honeyguide</strong>
-    <small>app · AI</small>
-  </a>
+  <nav class="link-group interests-group" aria-label="Interests and writing links">
+    <a class="space-link link-chinese" href="{{ page.chinese_url }}" lang="zh">中文</a>
+    <a class="space-link link-academic" href="{{ page.academic_url }}">Academic<br>writing</a>
+    <a class="space-link link-travel" href="{{ page.travel_url | relative_url }}">Travel plans<br>&amp; tips</a>
+  </nav>
 
-  <a class="node node-resume node-stripes" href="{{ page.resume_url | relative_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Résumé</strong>
-    <small>CV · one-pager</small>
-  </a>
-
-  <a class="node node-github node-stripes" href="{{ page.github_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>GitHub</strong>
-    <small>code</small>
-  </a>
-
-  <a class="node node-projects node-stripes" href="{{ page.projects_url | relative_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Projects</strong>
-    <small>work &amp; case studies</small>
-  </a>
-
-  <!-- Middle orbit -->
-  <a class="node node-chinese node-rings" href="{{ page.chinese_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Chinese</strong>
-    <small>language</small>
-  </a>
-
-  <a class="node node-academic node-rings" href="{{ page.academic_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Academic writing</strong>
-    <small>writing &amp; research</small>
-  </a>
-
-  <!-- Outer orbit: edit the URLs in the front matter above -->
-  <a class="node outer-node button-blog node-dots" href="{{ page.blog_url | relative_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Blog</strong>
-  </a>
-  <a class="node outer-node button-thread node-dots" href="{{ page.thread_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Thread</strong>
-  </a>
-  <a class="node outer-node button-instagram node-dots" href="{{ page.instagram_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>Instagram</strong>
-  </a>
-  <a class="node outer-node button-imdb node-dots" href="{{ page.imdb_url }}">
-    <span class="node-circle" aria-hidden="true"></span>
-    <strong>IMDb</strong>
-  </a>
+  <nav class="link-group social-group" aria-label="Social and personal links">
+    <a class="space-link link-blog" href="{{ page.blog_url }}">Personal<br>blog</a>
+    <a class="space-link link-instagram" href="{{ page.instagram_url }}">IG</a>
+    <a class="space-link link-thread" href="{{ page.thread_url }}">Threads</a>
+    <a class="space-link link-imdb" href="{{ page.imdb_url }}">IMDb</a>
+    <a class="space-link link-coffee" href="{{ page.coffee_url }}">Buy me<br>a coffee</a>
+  </nav>
 </main>
