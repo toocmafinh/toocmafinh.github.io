@@ -289,10 +289,45 @@ footer {
 }
 
 .post-feed {
-    list-style-type: none; /* Removes bullet points */
-    padding: 0;           /* Removes default padding */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.post-feed li {
-    margin-bottom: 20px;  /* Adds space between items */
+.blog-intro {
+  margin-bottom: 32px;
+}
+
+.blog-intro p {
+  color: #727272;
+}
+
+.post-feed__item {
+  border-top: 1px solid #e5e5e5;
+  padding: 24px 0;
+}
+
+.post-feed__item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.post-feed__item time {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.post-feed__item h2 {
+  margin-bottom: 10px;
+}
+
+.post-feed__item p {
+  color: #555;
+}
+
+.post-feed__read {
+  font-weight: 700;
 }

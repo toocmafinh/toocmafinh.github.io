@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="blog-intro">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+    <p>{{ page.description }}</p>
+  {% endif %}
+</div>
+
+{% if site.posts.size > 0 %}
+  <ol class="post-feed">
+    {% for post in site.posts %}
+      <li class="post-feed__item">
+        <article>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%d %B %Y" }}
+          </time>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% assign summary = post.description | default: post.excerpt %}
+          {% assign summary_text = summary | strip_html | normalize_whitespace %}
+          {% if summary_text != empty %}
+            <p>{{ summary_text | truncatewords: 35 }}</p>
+          {% endif %}
+          <a class="post-feed__read" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">
+            Read post &rarr;
+          </a>
+        </article>
+      </li>
+    {% endfor %}
+  </ol>
+{% else %}
+  <p>No posts yet.</p>
+{% endif %}
