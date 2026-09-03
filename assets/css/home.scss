@@ -46,7 +46,7 @@ a {
 
 .page-intro {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 24px;
   align-items: baseline;
   padding: 24px 0 16px;
@@ -57,6 +57,7 @@ a {
 .page-intro p {
   margin: 0;
   color: var(--muted);
+  text-align: right;
 }
 
 .page-intro a:hover,
@@ -173,16 +174,32 @@ footer a:focus-visible {
   font-size: 14px;
 }
 
-.social-group .link-coffee {
-  --bubble-size: 120px;
-}
-
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 16px 0 24px;
   border-top: 1px solid var(--ink);
   font-size: 12px;
+}
+
+.footer-signature .fa-fw {
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+}
+
+.footer-signature .fa-heart::before {
+  content: "♥";
+}
+
+.footer-signature .fa-music::before {
+  content: "♫";
+}
+
+.footer-coffee-link {
+  line-height: 1.2;
+  text-align: right;
 }
 
 @media (max-width: 900px) {
@@ -215,7 +232,6 @@ footer {
   .link-travel { --bubble-size: 126px; }
 
   .social-group .space-link { --bubble-size: 90px; }
-  .social-group .link-coffee { --bubble-size: 102px; }
 }
 
 @media (max-width: 560px) {
@@ -224,13 +240,12 @@ footer {
   }
 
   .page-intro {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: auto 1fr;
     gap: 8px 20px;
   }
 
   .page-intro p {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    text-align: right;
   }
 
   .space-map {
@@ -261,8 +276,7 @@ footer {
   .link-chinese,
   .link-academic,
   .link-travel,
-  .social-group .space-link,
-  .social-group .link-coffee {
+  .social-group .space-link {
     --bubble-size: 112px;
   }
 

@@ -13,14 +13,12 @@ travel_url: "https://airtable.com/appbVQsPNpk8cOgaa/shrQB4p9XEsWwyLFk/tblqQIOoB6
 blog_url: "https://write.as/phuong"
 thread_url: "https://www.threads.com/@tooc.space"
 instagram_url: "https://instagram.com/tooc.space"
-imdb_url: "https://www.imdb.com/list/ls031781578"
-coffee_url: "https://buymeacoffee.com/tooc"
+imdb_url: "https://www.imdb.com/list/ls031781578/?ref_=ext_shr_lnk"
 ---
 
 <header class="page-intro">
   <a class="name-link" href="{{ "/" | relative_url }}">Tooc</a>
   <p>Things around my life, my passion and things I find interesting.</p>
-  <a href="{{ "/about.html" | relative_url }}">About</a>
 </header>
 
 <main id="links-to-edit" class="space-map" aria-label="Tooc’s portfolio space">
@@ -45,6 +43,5 @@ coffee_url: "https://buymeacoffee.com/tooc"
     <a class="space-link link-instagram" href="{{ page.instagram_url }}">Instagram</a>
     <a class="space-link link-thread" href="{{ page.thread_url }}">Threads</a>
     <a class="space-link link-imdb" href="{{ page.imdb_url }}">IMDb</a>
-    <a class="space-link link-coffee" href="{{ page.coffee_url }}">Buy me<br>a 🧋</a>
   </nav>
 </main>
