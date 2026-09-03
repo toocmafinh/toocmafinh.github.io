@@ -1,0 +1,275 @@
+#!/usr/bin/env ruby
+
+# Import one notebook from an UpNote Markdown export into this Jekyll site.
+# The command is a dry run unless --publish is supplied.
+
+require "date"
+require "digest"
+require "fileutils"
+require "optparse"
+require "pathname"
+require "uri"
+require "yaml"
+
+DEFAULT_NOTEBOOK = "tooc.space"
+DEFAULT_AUTHOR = "Phuong Le"
+
+options = {
+  author: DEFAULT_AUTHOR,
+  notebook: DEFAULT_NOTEBOOK,
+  publish: false,
+  site_dir: Pathname(Dir.pwd).expand_path,
+  use_export_root: false
+}
+
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: script/import-upnote [options] UPNOTE_EXPORT_DIRECTORY"
+
+  opts.on("--notebook NAME", "Notebook folder to import (default: #{DEFAULT_NOTEBOOK})") do |name|
+    options[:notebook] = name
+  end
+
+  opts.on("--author NAME", "Post author (default: #{DEFAULT_AUTHOR})") do |name|
+    options[:author] = name
+  end
+
+  opts.on("--site-dir DIRECTORY", "Jekyll site directory (default: current directory)") do |directory|
+    options[:site_dir] = Pathname(directory).expand_path
+  end
+
+  opts.on("--notebook-root", "Treat the export directory itself as the selected notebook") do
+    options[:use_export_root] = true
+  end
+
+  opts.on("--publish", "Write the previewed posts and local attachments") do
+    options[:publish] = true
+  end
+
+  opts.on("-h", "--help", "Show this help") do
+    puts opts
+    exit
+  end
+end
+
+parser.parse!
+
+def abort_with(message)
+  warn "Error: #{message}"
+  exit 1
+end
+
+def normalize_metadata(metadata)
+  return {} unless metadata.is_a?(Hash)
+
+  metadata.each_with_object({}) do |(key, value), result|
+    result[key.to_s.downcase.gsub(/[^a-z0-9]/, "")] = value
+  end
+end
+
+def split_front_matter(markdown)
+  return [{}, markdown] unless markdown.start_with?("---\n", "---\r\n")
+
+  match = markdown.match(/\A---\s*\r?\n(.*?)\r?\n---\s*\r?\n/m)
+  return [{}, markdown] unless match
+
+  metadata = YAML.safe_load(match[1], permitted_classes: [Date, Time], aliases: false) || {}
+  [normalize_metadata(metadata), markdown[match.end(0)..] || ""]
+rescue Psych::Exception => error
+  warn "Warning: could not read front matter (#{error.message}); using the filename instead."
+  [{}, markdown]
+end
+
+def first_heading(body)
+  body.each_line do |line|
+    match = line.match(/^#\s+(.+?)\s*$/)
+    return match[1].strip if match
+  end
+  nil
+end
+
+def remove_matching_heading(body, title)
+  body.sub(/\A\s*#\s+#{Regexp.escape(title)}\s*\r?\n+/i, "")
+end
+
+def parse_date(value, fallback)
+  return fallback if value.nil? || value.to_s.strip.empty?
+
+  if value.is_a?(Numeric) || value.to_s.match?(/\A\d+(?:\.\d+)?\z/)
+    epoch = value.to_f
+    epoch /= 1000 if epoch > 10_000_000_000
+    return Time.at(epoch).to_date
+  end
+
+  Date.parse(value.to_s)
+rescue ArgumentError, RangeError
+  fallback
+end
+
+def slugify(value)
+  slug = value.unicode_normalize(:nfkd)
+              .encode("ASCII", invalid: :replace, undef: :replace, replace: "")
+              .downcase
+              .gsub(/[^a-z0-9]+/, "-")
+              .gsub(/\A-|\-\z/, "")
+  slug.empty? ? "note" : slug
+end
+
+def clean_note_body(body)
+  cleaned = body.dup
+  cleaned.gsub!(/<(script|iframe|object|embed)\b[^>]*>.*?<\/\1\s*>/mi, "")
+  cleaned.gsub!(/\s+on[a-z]+\s*=\s*(["']).*?\1/mi, "")
+  cleaned.gsub!(/\s+(href|src)\s*=\s*(["'])\s*javascript:.*?\2/mi, ' \1="#"')
+  cleaned.strip + "\n"
+end
+
+def inside_directory?(path, directory)
+  resolved_path = path.expand_path.to_s
+  resolved_directory = directory.expand_path.to_s
+  resolved_path == resolved_directory || resolved_path.start_with?(resolved_directory + File::SEPARATOR)
+end
+
+def local_asset_path(raw_url, note_path, notebook_dir)
+  url = raw_url.to_s.strip.sub(/\A</, "").sub(/>\z/, "")
+  return nil if url.empty? || url.start_with?("#", "/", "data:")
+  return nil if url.match?(/\A[a-z][a-z0-9+.-]*:/i)
+
+  decoded = URI::DEFAULT_PARSER.unescape(url.split(/[?#]/, 2).first)
+  candidate = note_path.dirname.join(decoded).cleanpath
+  return nil unless inside_directory?(candidate, notebook_dir)
+  return nil unless candidate.file?
+
+  candidate
+rescue ArgumentError
+  nil
+end
+
+def copy_and_rewrite_assets(body, note_path, notebook_dir, site_dir, post_slug, publish)
+  asset_directory = site_dir.join("assets", "upnote", post_slug)
+  replacements = {}
+
+  urls = body.scan(/!\[[^\]]*\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/).flatten
+  urls.concat(body.scan(/<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["'][^>]*>/i).flatten)
+
+  urls.uniq.each do |url|
+    source = local_asset_path(url, note_path, notebook_dir)
+    next unless source
+
+    filename = source.basename.to_s.gsub(/[^A-Za-z0-9._-]+/, "-")
+    fingerprint = Digest::SHA256.hexdigest(source.relative_path_from(notebook_dir).to_s)[0, 8]
+    filename = "#{File.basename(filename, ".*")}-#{fingerprint}#{File.extname(filename)}"
+    destination = asset_directory.join(filename)
+    public_url = "/assets/upnote/#{post_slug}/#{filename}"
+    replacements[url] = public_url
+
+    next unless publish
+
+    FileUtils.mkdir_p(asset_directory)
+    FileUtils.cp(source, destination) unless destination.file? && FileUtils.compare_file(source, destination)
+  end
+
+  replacements.each { |from, to| body = body.gsub(from, to) }
+  body
+end
+
+def yaml_front_matter(data)
+  YAML.dump(data).sub(/\A---\s*\n/, "---\n") + "---\n\n"
+end
+
+def existing_sources(posts_dir)
+  return {} unless posts_dir.directory?
+
+  posts_dir.glob("*.md").each_with_object({}) do |path, result|
+    content = path.read(encoding: "UTF-8")
+    metadata, = split_front_matter(content)
+    source = metadata["upnotesource"]
+    result[source.to_s] = path if source
+  rescue Encoding::InvalidByteSequenceError
+    next
+  end
+end
+
+export_root_argument = ARGV.shift
+abort_with(parser.to_s) unless export_root_argument
+abort_with("only one export directory may be supplied") unless ARGV.empty?
+
+export_root = Pathname(export_root_argument).expand_path
+abort_with("export directory does not exist: #{export_root}") unless export_root.directory?
+
+site_dir = options[:site_dir]
+abort_with("not a Jekyll site: #{site_dir}") unless site_dir.join("_config.yml").file?
+
+notebook_dir = if options[:use_export_root]
+                 export_root
+               elsif export_root.basename.to_s.casecmp?(options[:notebook])
+                 export_root
+               else
+                 candidates = export_root.glob("**/*").select do |path|
+                   path.directory? && path.basename.to_s.casecmp?(options[:notebook])
+                 end
+                 abort_with("more than one '#{options[:notebook]}' folder was found; pass the exact folder with --notebook-root") if candidates.length > 1
+                 candidates.first
+               end
+
+abort_with("could not find notebook folder '#{options[:notebook]}' in #{export_root}; export that notebook or pass its exact folder with --notebook-root") unless notebook_dir
+
+note_paths = notebook_dir.glob("**/*.md").reject { |path| path.basename.to_s.start_with?(".") }.sort
+abort_with("the '#{options[:notebook]}' export contains no Markdown notes") if note_paths.empty?
+
+posts_dir = site_dir.join("_posts")
+existing = existing_sources(posts_dir)
+actions = []
+
+note_paths.each do |note_path|
+  markdown = note_path.read(encoding: "UTF-8")
+  metadata, body = split_front_matter(markdown)
+  title = metadata["title"].to_s.strip
+  title = first_heading(body).to_s.strip if title.empty?
+  title = note_path.basename(".md").to_s if title.empty?
+  body = remove_matching_heading(body, title)
+
+  source_id = "#{options[:notebook]}/#{note_path.relative_path_from(notebook_dir)}"
+  existing_path = existing[source_id]
+  fallback_date = existing_path ? Date.strptime(existing_path.basename.to_s[0, 10], "%Y-%m-%d") : note_path.mtime.to_date
+  raw_date = metadata.values_at("createdat", "created", "date", "updatedat", "updated").compact.first
+  post_date = parse_date(raw_date, fallback_date)
+  post_slug = existing_path ? existing_path.basename.to_s.sub(/\A\d{4}-\d{2}-\d{2}-/, "").sub(/\.md\z/, "") : slugify(note_path.basename(".md").to_s)
+  destination = existing_path || posts_dir.join("#{post_date.strftime("%Y-%m-%d")}-#{post_slug}.md")
+
+  if destination.file? && existing_path.nil?
+    post_slug = "#{post_slug}-#{Digest::SHA256.hexdigest(source_id)[0, 8]}"
+    destination = posts_dir.join("#{post_date.strftime("%Y-%m-%d")}-#{post_slug}.md")
+  end
+
+  body = clean_note_body(body)
+  body = copy_and_rewrite_assets(body, note_path, notebook_dir, site_dir, post_slug, options[:publish])
+  post = yaml_front_matter(
+    "layout" => "post",
+    "title" => title,
+    "author" => options[:author],
+    "date" => post_date.strftime("%Y-%m-%d"),
+    "upnote_source" => source_id
+  ) + body
+
+  status = if destination.file?
+             destination.read(encoding: "UTF-8") == post ? "unchanged" : "update"
+           else
+             "create"
+           end
+
+  actions << [status, destination.relative_path_from(site_dir), title]
+  next unless options[:publish] && status != "unchanged"
+
+  FileUtils.mkdir_p(posts_dir)
+  temporary = Pathname("#{destination}.tmp-#{Process.pid}")
+  temporary.write(post, encoding: "UTF-8")
+  File.rename(temporary, destination)
+end
+
+mode = options[:publish] ? "Published" : "Preview"
+puts "#{mode}: #{options[:notebook]} (#{note_paths.length} #{note_paths.length == 1 ? "note" : "notes"})"
+actions.each { |status, path, title| puts format("%-9s %s — %s", status, path, title) }
+
+unless options[:publish]
+  puts
+  puts "No files were changed. Review the list, then rerun with --publish."
+end

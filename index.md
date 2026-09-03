@@ -1,15 +1,15 @@
 ---
 layout: home
 title: Tooc’s Space
-description: Phuong Le’s personal space for projects, writing and interests.
+description: My projects, my passions, and things I find interesting.
 
 # EDIT YOUR LINKS HERE
 resume_url: "/resume.html"
 github_url: "https://github.com/toocmafinh"
 projects_url: "/2023/12/28/las-vegas-hotels.html"
-chinese_url: "#links-to-edit"
-academic_url: "#links-to-edit"
-travel_url: "/2023/12/28/las-vegas-hotels.html"
+chinese_url: "https://drive.google.com/drive/folders/13XSfSfHZnP5MevjA1Y_aWyw1VfoD3qhw?usp=sharing"
+academic_url: "https://drive.google.com/drive/folders/17cZZsaq1obDaZgnxnSfROfphtXgekphQ?usp=drive_link"
+travel_url: "https://airtable.com/appbVQsPNpk8cOgaa/shrQB4p9XEsWwyLFk/tblqQIOoB6bDiC8aG/viwQKRJW2tzv8sTYB"
 blog_url: "https://write.as/phuong"
 thread_url: "https://www.threads.com/@tooc.space"
 instagram_url: "https://instagram.com/tooc.space"
@@ -18,8 +18,8 @@ coffee_url: "https://buymeacoffee.com/tooc"
 ---
 
 <header class="page-intro">
-  <a class="name-link" href="{{ "/" | relative_url }}">Phuong Le</a>
-  <p>Data, writing and things I find interesting.</p>
+  <a class="name-link" href="{{ "/" | relative_url }}">Tooc</a>
+  <p>Things around my life, my passion and things I find interesting.</p>
   <a href="{{ "/about.html" | relative_url }}">About</a>
 </header>
 
@@ -41,10 +41,10 @@ coffee_url: "https://buymeacoffee.com/tooc"
   </nav>
 
   <nav class="link-group social-group" aria-label="Social and personal links">
-    <a class="space-link link-blog" href="{{ page.blog_url }}">Personal<br>blog</a>
-    <a class="space-link link-instagram" href="{{ page.instagram_url }}">IG</a>
+    <a class="space-link link-blog" href="{{ page.blog_url }}">Blog</a>
+    <a class="space-link link-instagram" href="{{ page.instagram_url }}">Instagram</a>
     <a class="space-link link-thread" href="{{ page.thread_url }}">Threads</a>
     <a class="space-link link-imdb" href="{{ page.imdb_url }}">IMDb</a>
-    <a class="space-link link-coffee" href="{{ page.coffee_url }}">Buy me<br>a coffee</a>
+    <a class="space-link link-coffee" href="{{ page.coffee_url }}">Buy me<br>a 🧋</a>
   </nav>
 </main>
