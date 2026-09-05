@@ -7,9 +7,9 @@ description: My projects, my passions, and things I find interesting.
 resume_url: "/resume.html"
 github_url: "https://github.com/toocmafinh"
 projects_url: "/projects/"
-chinese_url: ""
-academic_url: ""
-travel_url: ""
+chinese_url: "/chinese/"
+academic_url: "/academic-writing/"
+travel_url: "/travel-plans/"
 blog_url: "https://write.as/phuong"
 thread_url: "https://www.threads.com/@tooc.space"
 instagram_url: "https://instagram.com/tooc.space"
@@ -35,7 +35,7 @@ youtube_url: "https://youtu.be/Sv52Uy5hcas"
 
     <nav class="link-group interests-group" aria-label="Interests and writing links">
       <a class="space-link link-chinese" href="{{ page.chinese_url }}" lang="zh">中文</a>
-      <a class="space-link link-academic" href="{{ page.academic_url }}">Academic<br>writing</a>
+      <a class="space-link link-academic" href="{{ page.academic_url | relative_url }}">Academic<br>writing</a>
       <a class="space-link link-travel" href="{{ page.travel_url | relative_url }}">Travel plans<br>&amp; tips</a>
     </nav>
 
